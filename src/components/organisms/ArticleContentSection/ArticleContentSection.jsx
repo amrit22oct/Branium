@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import ArticleGrid from "./ArticleGrid";
-import { ThemeContextObject } from "../../../context/ThemeContext";
+import ArticleGrid from "./ArticleGrid.jsx";
+import { ThemeContextObject } from "../../../context/ThemeContext.jsx";
 
 const sections = [
   {

@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import { motion } from "framer-motion";
-import CardImage from "../molecules/CardImage";
-import CardContent from "../molecules/CardContent";
-import { ThemeContextObject } from "../../context/ThemeContext";
+import CardImage from "../molecules/CardImage.jsx";
+import CardContent from "../molecules/CardContent.jsx";
+import { ThemeContextObject } from "../../context/ThemeContext.jsx";
 
 // Mock data for cards
 const mockData = [

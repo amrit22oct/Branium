@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import CardImage from "../molecules/CardImage"; // make sure path is correct
-import { ThemeContextObject } from "../../context/ThemeContext";
+import CardImage from "../molecules/CardImage.jsx"; // make sure path is correct
+import { ThemeContextObject } from "../../context/ThemeContext.jsx";
 
 const cardImages = [
   "https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=800&q=80",

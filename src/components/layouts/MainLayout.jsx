@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
-import Navbar from '../organisms/Navbar';
-import Footer from '../organisms/Footer';
-import TopBar from '../organisms/TopBar';
-import ContactBar from '../organisms/ContactBar';
-import BoxComponnt from '../organisms/BoxComponnt';
-import { ThemeContextObject } from '../../context/ThemeContext';
+import Navbar from '../organisms/Navbar.jsx';
+import Footer from '../organisms/Footer.jsx';
+import TopBar from '../organisms/TopBar.jsx';
+import ContactBar from '../organisms/ContactBar.jsx';
+import BoxComponnt from '../organisms/BoxComponnt.jsx';
+import { ThemeContextObject } from '../../context/ThemeContext.jsx';
 
 const MainLayout = ({ children }) => {
   const { theme, toggleTheme } = useContext(ThemeContextObject);

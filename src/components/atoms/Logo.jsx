@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { ThemeContextObject } from "../../context/ThemeContext";
+import { ThemeContextObject } from "../../context/ThemeContext.jsx";
 
 const logoText = "Brainium";
 const baseColorLight = "#1f2937"; // dark gray

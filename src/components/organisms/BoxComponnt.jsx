@@ -1,7 +1,7 @@
 import React, { useRef, useContext } from "react";
 import { motion } from "framer-motion";
-import Carousel from "../atoms/Carousels";
-import { ThemeContextObject } from "../../context/ThemeContext";
+import Carousel from "../atoms/Carousels.jsx";
+import { ThemeContextObject } from "../../context/ThemeContext.jsx";
 
 const BoxComponent = () => {
   const constraintsRef = useRef(null);

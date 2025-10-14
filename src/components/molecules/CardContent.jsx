@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { motion } from "framer-motion";
-import { ThemeContextObject } from "../../context/ThemeContext";
+import { ThemeContextObject } from "../../context/ThemeContext.jsx";
 
 const CardContent = ({ title, description, catogary }) => {
   const { theme } = useContext(ThemeContextObject);

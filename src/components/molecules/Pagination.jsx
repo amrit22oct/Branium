@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '../atoms/Button';
+import Button from '../atoms/Button.jsx';
 
 const Pagination = ({ currentPage, totalPages, onPrev, onNext }) => {
   return (

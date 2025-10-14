@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import { motion, useTransform, useSpring, useScroll } from "framer-motion";
-import CardComponent from "../../components/organisms/CardComponent";
-import HorizontalCarousel from "./HorizontalCarousel";
-import { ThemeContextObject } from "../../context/ThemeContext";
+import CardComponent from "../../components/organisms/CardComponent.jsx";
+import HorizontalCarousel from "./HorizontalCarousel.jsx";
+import { ThemeContextObject } from "../../context/ThemeContext.jsx";
 
 const PopularCardsCarousel = () => {
   const { theme } = useContext(ThemeContextObject);

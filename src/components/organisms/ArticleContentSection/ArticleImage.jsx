@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { motion } from "framer-motion";
-import { ThemeContextObject } from "../../../context/ThemeContext";
+import { ThemeContextObject } from "../../../context/ThemeContext.jsx";
 
 const ArticleImage = ({ image, title, text, delay = 0, big = false }) => {
   const { theme } = useContext(ThemeContextObject);

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, useContext } from "react";
 import { motion } from "framer-motion";
-import { ThemeContextObject } from "../../context/ThemeContext";
+import { ThemeContextObject } from "../../context/ThemeContext.jsx";
 
 const HorizontalCarousel = ({ children, speed = 2 }) => {
   const { theme } = useContext(ThemeContextObject);

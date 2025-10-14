@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import Icon from "../atoms/Icon"; // Assuming your Icon component is ready
-import { ThemeContextObject } from "../../context/ThemeContext";
+import Icon from "../atoms/Icon.jsx"; // Assuming your Icon component is ready
+import { ThemeContextObject } from "../../context/ThemeContext.jsx";
 
 const ContactBar = () => {
   const { theme } = useContext(ThemeContextObject);

@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { ThemeContextObject } from "../../context/ThemeContext";
+import { ThemeContextObject } from "../../context/ThemeContext.jsx";
 
 const SocialLinks = ({
   title = "Follow",

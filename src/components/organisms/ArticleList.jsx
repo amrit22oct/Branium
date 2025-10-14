@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import { motion } from "framer-motion";
-import ArticleCard from "./ArticleCard";
-import articles from "../../constants/articles";
-import { ThemeContextObject } from "../../context/ThemeContext";
+import ArticleCard from "./ArticleCard.jsx";
+import articles from "../../constants/articles.js";
+import { ThemeContextObject } from "../../context/ThemeContext.jsx";
 
 const containerVariants = {
   hidden: {},

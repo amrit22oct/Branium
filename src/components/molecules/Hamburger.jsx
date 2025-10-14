@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom"; // for SPA navigation
-import Navlinks from "../atoms/Navlinks";
+import Navlinks from "../atoms/Navlinks.jsx";
 
 const Hamburger = ({
   links = [],

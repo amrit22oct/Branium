@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { motion } from "framer-motion";
-import ArticleList from "./ArticleList";
-import { ThemeContextObject } from "../../context/ThemeContext";
+import ArticleList from "./ArticleList.jsx";
+import { ThemeContextObject } from "../../context/ThemeContext.jsx";
 
 const ContentSection = () => {
   const { theme } = useContext(ThemeContextObject);

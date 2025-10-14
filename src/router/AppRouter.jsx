@@ -1,17 +1,17 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Home from "../features/home/Home";
-import Login from "../features/auth/Login";
-import Register from "../features/auth/Register";
-import Profile from "../features/profile/Profile";
+import Home from "../features/home/Home.jsx";
+import Login from "../features/auth/Login.jsx";
+import Register from "../features/auth/Register.jsx";
+import Profile from "../features/profile/Profile.jsx";
 
 // Optional: layout
-import MainLayout from "../components/layouts/MainLayout";
-import NotFound from "../components/organisms/NotFound";
-import BlogPage from "../features/blogs/BlogPage";
-import ArticlePage from "../features/articles/ArticlePage";
-import StepUpForm from "../features/stepUpForm/stepUpForm";
-import MuiPage from "../mui/MuiPage";
+import MainLayout from "../components/layouts/MainLayout.jsx";
+import NotFound from "../components/organisms/NotFound.jsx";
+import BlogPage from "../features/blogs/BlogPage.jsx";
+import ArticlePage from "../features/articles/ArticlePage.jsx";
+import StepUpForm from "../features/stepUpForm/stepUpForm.jsx";
+import MuiPage from "../mui/MuiPage.jsx";
 
 const AppRouter = () => {
   return (

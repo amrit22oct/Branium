@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef, useContext } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import Navlinks from "../atoms/Navlinks";
-import Logo from "../atoms/Logo";
-import { navLinks } from "../../constants/navlinks";
-import { ThemeContextObject } from "../../context/ThemeContext";
+import Navlinks from "../atoms/Navlinks.jsx";
+import Logo from "../atoms/Logo.jsx";
+import { navLinks } from "../../constants/navlinks.js";
+import { ThemeContextObject } from "../../context/ThemeContext.jsx";
 
 const MotionLink = motion.create(Link);
 

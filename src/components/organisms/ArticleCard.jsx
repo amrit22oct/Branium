@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import Loader from "../atoms/Loader";
+import Loader from "../atoms/Loader.jsx";
 import "../organisms/ArticleCard.css";
-import { ThemeContextObject } from "../../context/ThemeContext";
+import { ThemeContextObject } from "../../context/ThemeContext.jsx";
 
 const ArticleCard = ({
   article,

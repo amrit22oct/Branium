@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import ArticleImage from "./ArticleImage";
-import { ThemeContextObject } from "../../../context/ThemeContext";
+import ArticleImage from "./ArticleImage.jsx";
+import { ThemeContextObject } from "../../../context/ThemeContext.jsx";
 
 const ArticleGrid = ({ items, theme }) => {
   const { theme: currentTheme } = useContext(ThemeContextObject);

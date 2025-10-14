@@ -1,6 +1,6 @@
 import React from 'react';
-import Input from '../atoms/Input';
-import Button from '../atoms/Button';
+import Input from '../atoms/Input.jsx';
+import Button from '../atoms/Button.jsx';
 
 const AuthForm = ({ onSubmit, email, setEmail, password, setPassword, buttonText }) => {
   return (

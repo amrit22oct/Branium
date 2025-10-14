@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
-import BrandCarousel from "./BrandCarousel";
-import SocialLinks from "../molecules/SocialLinks";
-import { ThemeContextObject } from "../../context/ThemeContext";
+import BrandCarousel from "./BrandCarousel.jsx";
+import SocialLinks from "../molecules/SocialLinks.jsx";
+import { ThemeContextObject } from "../../context/ThemeContext.jsx";
 
 const Footer = () => {
   const { theme } = useContext(ThemeContextObject);
