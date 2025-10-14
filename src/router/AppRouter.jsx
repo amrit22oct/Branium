@@ -10,7 +10,6 @@ import MainLayout from "../components/layouts/MainLayout.jsx";
 import NotFound from "../components/organisms/NotFound.jsx";
 import BlogPage from "../features/blogs/BlogPage.jsx";
 import ArticlePage from "../features/articles/ArticlePage.jsx";
-import StepUpForm from "../features/stepUpForm/stepUpForm.jsx";
 import MuiPage from "../mui/MuiPage.jsx";
 
 const AppRouter = () => {
@@ -41,14 +40,14 @@ const AppRouter = () => {
         }
       />
 
-      <Route
+      {/* <Route
         path="/form"
         element={
           <MainLayout>
             <StepUpForm />
           </MainLayout>
         }
-      />
+      /> */}
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route
