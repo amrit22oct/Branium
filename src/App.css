@@ -1,0 +1,21 @@
+/* src/styles/globals.css */
+@font-face {
+  font-family: 'Irish Grover';
+  src: url('../assets/fonts/IrishGrover-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Delius';
+  src: url('../assets/fonts/Delius-Regular.ttf') format('truetype');
+}
+
+body {
+  font-family: 'Delius', sans-serif;
+}
+
+h1, h2, h3, .logo-font {
+  font-family: 'Irish Grover', cursive;
+}
+
+
+
