@@ -1,31 +1,53 @@
-import React from 'react';
-import Button from '@mui/material/Button';
-import TextField from '@mui/material/TextField';
-import Autocomplete from '@mui/material/Autocomplete';
-import { Typography } from '@mui/material';
+import React, { useState } from "react";
+import { Grid, Paper, Typography, Chip, Box, Button, TableContainer, Table, TableHead, TableRow, TableCell, TableBody, Avatar } from "@mui/material";
+import Dashboard from "./Dashboard";
+import UsersPage from "./UsersPage";
+import SidebarLayout from "./SidebarLayout";
 
-const top100Films = [
-  { label: 'The Shawshank Redemption', year: 1994 },
-  { label: 'The Godfather', year: 1972 },
-  { label: 'The Dark Knight', year: 2008 },
-  { label: 'Pulp Fiction', year: 1994 },
-];
+import ReportPage from "./Report/index.jsx";
 
 const MuiPage = () => {
-  return (
-    <div style={{ padding: 20 }}>
-      <Button variant="contained">Hello world</Button>
-      <Typography variant="h1" > hiii this is Material ui</Typography>
+  const [page, setPage] = useState("Dashboard");
+  const menuItems = ["Dashboard", "Users", "Reports", "Analytics", "Settings"];
 
-      <Autocomplete
-        disablePortal
-        id="combo-box-demo"
-        options={top100Films}
-        getOptionLabel={(option) => option.label}
-        sx={{ width: 300, marginTop: 20 }}
-        renderInput={(params) => <TextField {...params} label="Movie" />}
-      />
-    </div>
+  const renderPage = () => {
+    switch (page) {
+      case "Dashboard": return <Dashboard />;
+      case "Users": return <UsersPage />;
+      case "Reports": return <ReportPage />
+        return (
+          <Paper sx={{ p: 3 }}>
+            <Typography variant="h6">Reports</Typography>
+            <Box sx={{ height: 300, bgcolor: "#f5f5f5", display: "flex", justifyContent: "center", alignItems: "center" }}>
+              Reports Chart Placeholder
+            </Box>
+          </Paper>
+        );
+      case "Analytics":
+        return (
+          <Paper sx={{ p: 3 }}>
+            <Typography variant="h6">Analytics</Typography>
+            <Box sx={{ height: 300, bgcolor: "#f5f5f5", display: "flex", justifyContent: "center", alignItems: "center" }}>
+              Analytics Chart Placeholder
+            </Box>
+          </Paper>
+        );
+      case "Settings":
+        return (
+          <Paper sx={{ p: 3 }}>
+            <Typography variant="h6">Settings</Typography>
+            <Button variant="contained" color="primary">Update Settings</Button>
+          </Paper>
+        );
+      default:
+        return null;
+    }
+  };
+
+  return (
+    <SidebarLayout menuItems={menuItems} currentPage={page} setPage={setPage}>
+      {renderPage()}
+    </SidebarLayout>
   );
 };
 

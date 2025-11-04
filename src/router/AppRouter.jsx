@@ -12,6 +12,12 @@ import BlogPage from "../features/blogs/BlogPage.jsx";
 import ArticlePage from "../features/articles/ArticlePage.jsx";
 import MuiPage from "../mui/MuiPage.jsx";
 
+
+import ChatPage from "../chat/ChatPage.jsx";
+
+
+
+
 const AppRouter = () => {
   return (
     <Routes>
@@ -23,6 +29,9 @@ const AppRouter = () => {
           </MainLayout>
         }
       />
+
+<Route path="/chat" element={<ChatPage />} />
+
       <Route
         path="/blogs"
         element={
@@ -34,11 +43,12 @@ const AppRouter = () => {
       <Route
         path="/mui"
         element={
-          <MainLayout>
+          
             <MuiPage />
-          </MainLayout>
+         
         }
       />
+      
 
       {/* <Route
         path="/form"
