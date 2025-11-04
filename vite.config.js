@@ -8,5 +8,6 @@ export default defineConfig({
     host: true, // enables network access
     port: 3000
   },
+  base:'/',
   plugins: [react(), tailwindcss(),],
 })
