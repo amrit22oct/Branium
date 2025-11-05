@@ -116,35 +116,31 @@ const chatSlice = createSlice({
     updateChatLatestMessage: (state, action) => {
       const { chatId, message } = action.payload;
       if (!chatId || !message) return;
-
+    
       const chatIndex = state.chats.findIndex((c) => c._id === chatId);
-      
-      
-
-      if (chatIndex !== -1) {
-        // Update existing chat
-        const updatedChat = {
-          ...state.chats[chatIndex],
-          latestMessage: message,
-          updatedAt: message.createdAt || new Date().toISOString(),
-        };
-
-
-        // Move chat to top
-        state.chats.splice(chatIndex, 1);
-        state.chats.unshift(updatedChat);
-      } else {
-        // Add new chat if not present
-        state.chats.unshift({
-          _id: chatId,
-          latestMessage: message,
-          updatedAt: message.createdAt || new Date().toISOString(),
-        });
+      if (chatIndex === -1) {
+        // 🚫 Ignore updates for unknown chats
+        console.warn("Ignoring update for unknown chat:", chatId);
+        return;
       }
-
-      // Force re-render
+    
+      // ✅ Update existing chat
+      const updatedChat = {
+        ...state.chats[chatIndex],
+        latestMessage: message,
+        updatedAt: message.createdAt || new Date().toISOString(),
+      };
+    
+      // ✅ Move to top
+      state.chats.splice(chatIndex, 1);
+      state.chats.unshift(updatedChat);
+    
+      // ✅ Force re-render
       state.chats = [...state.chats];
     },
+    
+
+    
 
     // 🟢 Increment Unread Count
     incrementUnreadCount: (state, action) => {

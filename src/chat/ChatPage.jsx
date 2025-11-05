@@ -72,17 +72,28 @@ const ChatPage = () => {
       // 🚫 Ignore if this chat is already open
       if (openChat && openChat._id === chatId) return;
     
+      // 🚫 Ignore self notifications (handles string or object)
+      const senderId =
+        typeof message.senderId === "object"
+          ? message.senderId._id
+          : message.senderId;
+    
+      if (senderId === user?._id) {
+        console.log("🟡 Ignoring self notification for chat:", chatId);
+        return;
+      }
+    
       // ✅ Get chats directly from Redux store
       const currentChats = store.getState().chat.chats;
       const existingChat = currentChats.find((c) => c._id === chatId);
     
-      // 🚫 Skip if chat is not known (prevents "Unknown Chat" bug)
+      // 🚫 Skip if chat is not known (prevents phantom Unknown Chat)
       if (!existingChat) {
-        console.warn("Ignoring notification for unknown chat:", chatId);
+        console.warn("⚠️ Ignoring notification for unknown chat:", chatId);
         return;
       }
     
-      // ✅ Update the latest message and unread badge
+      // ✅ Update sidebar and unread badge
       dispatch(updateLatestMessage({ chatId, message }));
       dispatch(incrementUnread(chatId));
     
@@ -93,6 +104,8 @@ const ChatPage = () => {
     
       new Audio("/notification.mp3").play().catch(() => {});
     };
+    
+    
     
 
     socket.on("online users", handleOnlineUsers);
