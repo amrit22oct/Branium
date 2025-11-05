@@ -22,15 +22,12 @@ const ChatSidebar = ({ onSelectChat, user, onlineUsers = [] }) => {
     if (user) dispatch(fetchChats());
   }, [dispatch, user]);
 
-  // Listen for new chats
   useEffect(() => {
     if (!user) return;
-
     const handleChatCreated = (chat) => {
       dispatch(addChat(chat));
       toast.success(`New chat created with ${chat.chatName || "user"}`);
     };
-
     socket.on("chat created", handleChatCreated);
     return () => socket.off("chat created", handleChatCreated);
   }, [user, dispatch]);
@@ -109,7 +106,6 @@ const ChatSidebar = ({ onSelectChat, user, onlineUsers = [] }) => {
             <span className="text-gray-900">
               {formatDistanceToNow(new Date(latest.createdAt), {
                 addSuffix: true,
-                addPerfix:false,
               })}
             </span>
           )}
@@ -125,7 +121,6 @@ const ChatSidebar = ({ onSelectChat, user, onlineUsers = [] }) => {
 
   return (
     <div className="w-80 flex flex-col border-r border-gray-200 dark:border-amber-800 bg-white dark:bg-amber-100 text-black ">
-      
       <div className="flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-800">
         <h2 className="text-xl font-bold">Chats</h2>
         <button
@@ -161,8 +156,7 @@ const ChatSidebar = ({ onSelectChat, user, onlineUsers = [] }) => {
       </div>
 
       <div className="p-3 text-sm border-t border-gray-200 dark:border-gray-800 text-gray-500 flex items-center gap-2">
-        <Circle className="w-3 h-3 text-green-500" /> {onlineUsers.length}{" "}
-        online
+        <Circle className="w-3 h-3 text-green-500" /> {onlineUsers.length} online
       </div>
     </div>
   );

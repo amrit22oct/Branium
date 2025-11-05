@@ -1,7 +1,10 @@
 import React, { useEffect, useState, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import ChatBox from "./ChatBox.jsx";
-import ChatSidebar from "./ChatSidebar.jsx";
+import ChatBox from './ChatBox1.jsx';
+import store from "../state/store.js"; // ✅ Add this line
+
+
+import ChatSidebar from "./ChatSidebar1.jsx";
 import socket from "../api/socket.js";
 import {
   fetchChats,
@@ -63,24 +66,34 @@ const ChatPage = () => {
     const handleNotification = (data) => {
       const { chatId, message } = data || {};
       if (!chatId || !message) return;
-
+    
       const openChat = activeChatRef.current;
-
-      // 🚫 Ignore if this chat is currently open
+    
+      // 🚫 Ignore if this chat is already open
       if (openChat && openChat._id === chatId) return;
-
-      // ✅ Update sidebar and unread count
+    
+      // ✅ Get chats directly from Redux store
+      const currentChats = store.getState().chat.chats;
+      const existingChat = currentChats.find((c) => c._id === chatId);
+    
+      // 🚫 Skip if chat is not known (prevents "Unknown Chat" bug)
+      if (!existingChat) {
+        console.warn("Ignoring notification for unknown chat:", chatId);
+        return;
+      }
+    
+      // ✅ Update the latest message and unread badge
       dispatch(updateLatestMessage({ chatId, message }));
       dispatch(incrementUnread(chatId));
-
-      // 🔔 Show toast + sound
+    
       toast.info(`💬 New message from ${message.senderId?.name || "Someone"}`, {
         position: "bottom-right",
         autoClose: 2000,
       });
-
+    
       new Audio("/notification.mp3").play().catch(() => {});
     };
+    
 
     socket.on("online users", handleOnlineUsers);
     socket.on("chat created", handleChatCreated);

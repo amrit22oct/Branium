@@ -1,5 +1,6 @@
 import { io } from "socket.io-client";
 
+
 // 🌐 Use environment variable or fallback to localhost
 const SOCKET_URL =
   import.meta.env.VITE_SOCKET_URL || "http://localhost:5000";

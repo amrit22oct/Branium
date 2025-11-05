@@ -20,7 +20,7 @@ const MessageInput = ({ newMessage, setNewMessage, handleSend, isSending }) => {
   return (
     <form
       onSubmit={handleSend}
-      className="p-3 flex items-end gap-2 border-t dark:border-gray-700"
+      className="p-3 flex items-end gap-2 border-t-2 rounded-t-2xl dark:border-black"
     >
       <textarea
         ref={textareaRef}

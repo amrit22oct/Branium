@@ -70,23 +70,14 @@ useEffect(() => {
 }, [chatId, user, dispatch]);
 
 
-  // ==========================================================
-  // 🔹 Fetch messages when chat changes
-  // ==========================================================
   useEffect(() => {
     if (chatId) dispatch(getMessages(chatId));
   }, [dispatch, chatId]);
 
-  // ==========================================================
-  // 🔹 Auto-scroll to bottom
-  // ==========================================================
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
-  // ==========================================================
-  // 🔹 Handle sending messages
-  // ==========================================================
   const handleSend = useCallback(
     async (e) => {
       e.preventDefault();
@@ -131,13 +122,13 @@ useEffect(() => {
   // ==========================================================
   if (!activeChat || !user)
     return (
-      <div className="flex-1 flex items-center justify-center text-gray-400 text-lg">
+      <div className="flex-1 flex items-center justify-center font-bold text-xl">
         💬 Select a chat to start messaging
       </div>
     );
 
   return (
-    <div className="flex flex-col h-full bg-gray-100 dark:bg-gray-900 transition-colors duration-200">
+    <div className="flex flex-col h-full bg-gray-100 dark:bg-gray-500 transition-colors duration-200">
       <ChatHeader activeChat={activeChat} user={user} />
       <MessageList
   messages={messages}

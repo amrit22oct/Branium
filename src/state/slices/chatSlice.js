@@ -118,6 +118,8 @@ const chatSlice = createSlice({
       if (!chatId || !message) return;
 
       const chatIndex = state.chats.findIndex((c) => c._id === chatId);
+      
+      
 
       if (chatIndex !== -1) {
         // Update existing chat
@@ -126,6 +128,7 @@ const chatSlice = createSlice({
           latestMessage: message,
           updatedAt: message.createdAt || new Date().toISOString(),
         };
+
 
         // Move chat to top
         state.chats.splice(chatIndex, 1);
